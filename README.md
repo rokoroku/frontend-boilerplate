@@ -1,13 +1,14 @@
 
 # Frontend Boilerplate (TypeScript)
 
-A react-redux-webpack-typescript boilerplate based on TJ's [frontend-boilerplate](https://github.com/tj/frontend-boilerplate).
+A react-redux-preact-webpack-typescript boilerplate based on TJ's [frontend-boilerplate](https://github.com/tj/frontend-boilerplate).
 
 ## Contains
 
 - [x] [Typescript](https://www.typescriptlang.org/)
 - [x] [React](https://facebook.github.io/react/)
 - [x] [Redux](https://github.com/reactjs/redux)
+- [x] [Preact](https://github.com/developit/preact/)
 - [x] [React Router Redux](https://github.com/reactjs/react-router-redux)
 - [x] [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
 - [ ] Redux effects

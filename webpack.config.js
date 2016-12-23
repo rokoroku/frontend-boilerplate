@@ -2,6 +2,8 @@ var rucksack = require('rucksack-css');
 var webpack = require('webpack');
 var path = require('path');
 
+var isProduction = process.argv.indexOf('-p') > 0;
+
 module.exports = {
   context: path.join(__dirname, './src'),
   entry: {
@@ -12,8 +14,6 @@ module.exports = {
     vendor: [
       'react',
       'react-dom',
-      'react-hot-api',
-      'react-hot-loader',
       'react-redux',
       'react-router',
       'react-router-redux',
@@ -27,7 +27,14 @@ module.exports = {
   target: 'web',
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.js', '.ts', '.tsx'],
+    // Replace react with preact for performance and size
+    alias: {
+      // FIXME: temporal workaround for preact-compat issues
+      // https://github.com/developit/preact-compat/issues/192#issuecomment-262187972
+      'react': isProduction ? 'preact-compat/dist/preact-compat' : 'preact-compat',
+      'react-dom': isProduction ? 'preact-compat/dist/preact-compat' : 'preact-compat'
+    },
   },
   module: {
     loaders: [
@@ -37,7 +44,7 @@ module.exports = {
         loader: [
           'react-hot-loader',
           'awesome-typescript-loader'
-        ]
+        ],
       },
       // css 
       {
@@ -77,6 +84,7 @@ module.exports = {
       filename: 'vendor.bundle.js',
       minChunks: Infinity
     }),
+    new webpack.optimize.AggressiveMergingPlugin()
   ],
   devServer: {
     contentBase: './src',

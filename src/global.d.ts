@@ -13,7 +13,6 @@ declare interface TodoItemData {
 declare type TodoStoreState = TodoItemData[];
 declare type TodoActionPayload = TodoItemData;
 
-
 /** Add dummy declaration for developement with webpack */
 interface RequireInterface {
   (module: string): any;
@@ -21,4 +20,3 @@ interface RequireInterface {
 }
 declare var module: any;
 declare var require: RequireInterface;
-
