@@ -1,22 +1,23 @@
 
-# Frontend Boilerplate
+# Frontend Boilerplate (TypeScript)
 
-A boilerplate of things that mostly shouldn't exist.
+A react-redux-webpack-typescript boilerplate based on TJ's [frontend-boilerplate](https://github.com/tj/frontend-boilerplate).
 
 ## Contains
 
-- [x] [Webpack](https://webpack.github.io)
+- [x] [Typescript](https://www.typescriptlang.org/)
 - [x] [React](https://facebook.github.io/react/)
 - [x] [Redux](https://github.com/reactjs/redux)
-- [x] [Babel](https://babeljs.io/)
-- [x] [Autoprefixer](https://github.com/postcss/autoprefixer)
-- [x] [PostCSS](https://github.com/postcss/postcss)
-- [x] [CSS modules](https://github.com/outpunk/postcss-modules)
-- [x] [Rucksack](http://simplaio.github.io/rucksack/docs)
 - [x] [React Router Redux](https://github.com/reactjs/react-router-redux)
 - [x] [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
 - [ ] Redux effects
-- [x] TodoMVC example
+- [x] [Webpack 2](https://webpack.github.io)
+- [x] [Awesome Typescript Loader](https://github.com/s-panferov/awesome-typescript-loader)
+- [x] [PostCSS](https://github.com/postcss/postcss)
+- [x] [CSS modules](https://github.com/outpunk/postcss-modules)
+- [x] [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [x] [Rucksack](http://simplaio.github.io/rucksack/docs)
+- [x] [TodoMVC example](http://todomvc.com)
 
 ## Setup
 
@@ -38,7 +39,10 @@ $ npm run build
 
 ## Note
 
-My personal projects have diverged from this quite a bit, I use browserify now instead etc, but feel free to use this if it fits your needs! I won't be updating it a ton for now unless I have time to update it to match my current workflow.
+Applied **Typescript** to TJ's [frontend-boilerplate](https://github.com/tj/frontend-boilerplate) and update build tools (e.g. webpack) to the newest versions.
+Hope it will be useful for people who want to start React development with TypeScript.
+
+(Since some plugins with webpack 2 is still in beta, they may be unstable for now.)
 
 # License
 
