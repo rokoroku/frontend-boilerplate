@@ -15,9 +15,8 @@ A react-redux-preact-webpack-typescript boilerplate based on TJ's [frontend-boil
 - [x] [Webpack 2](https://webpack.github.io)
 - [x] [Awesome Typescript Loader](https://github.com/s-panferov/awesome-typescript-loader)
 - [x] [PostCSS](https://github.com/postcss/postcss)
+- [x] [CSS next](http://cssnext.io/)
 - [x] [CSS modules](https://github.com/outpunk/postcss-modules)
-- [x] [Autoprefixer](https://github.com/postcss/autoprefixer)
-- [x] [Rucksack](http://simplaio.github.io/rucksack/docs)
 - [x] [TodoMVC example](http://todomvc.com)
 
 ## Setup

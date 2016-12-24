@@ -1,11 +1,12 @@
-var rucksack = require('rucksack-css');
 var webpack = require('webpack');
 var path = require('path');
 
-var isProduction = process.argv.indexOf('-p') > 0;
+var isProduction = process.argv.indexOf('-p') >= 0;
+var sourcePath = path.join(__dirname, './src');
+var outPath = path.join(__dirname, './dist');
 
 module.exports = {
-  context: path.join(__dirname, './src'),
+  context: sourcePath,
   entry: {
     app: [
       './index.tsx',
@@ -21,7 +22,7 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, './dist'),
+    path: outPath,
     filename: 'bundle.js',
   },
   target: 'web',
@@ -73,9 +74,15 @@ module.exports = {
       options: {
         context: '/',
         postcss: [
-          rucksack({
-            autoprefixer: true
-          })
+          require('postcss-import')({
+            addDependencyTo: webpack
+          }),
+          require('postcss-url')(),
+          require('postcss-cssnext')(),
+          require('postcss-reporter')(),
+          require('postcss-browser-reporter')({
+            disabled: isProduction
+          }),
         ]
       }
     }),
@@ -87,10 +94,10 @@ module.exports = {
     new webpack.optimize.AggressiveMergingPlugin()
   ],
   devServer: {
-    contentBase: './src',
+    contentBase: sourcePath,
     hot: true,
     stats: {
       warnings: false
-    }
+    },
   },
 };
